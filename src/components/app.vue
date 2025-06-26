@@ -97,9 +97,9 @@
         routes: routes,
 
         // Register service worker (only on production build)
-        serviceWorker: process.env.NODE_ENV ==='production' ? {
+        serviceWorker: {
           path: '/service-worker.js',
-        } : {},
+        },
       };
       // Login screen data
       const username = ref('');
