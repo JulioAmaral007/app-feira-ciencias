@@ -1,6 +1,5 @@
 
 import vue from '@vitejs/plugin-vue';
-import fs from 'fs';
 import path from 'path';
 
 const SRC_DIR = path.resolve(__dirname, './src');
@@ -33,11 +32,12 @@ export default async () => {
       headers: {
         'Service-Worker-Allowed': '/'
       },
-      https: {
-        key: fs.readFileSync('./ssl/key.pem'),
-        cert: fs.readFileSync('./ssl/cert.pem'),
-      },
-      host: '0.0.0.0', //// Permite que a aplicação seja acessada de outros dispositivos na rede local
+      // https: {
+      //   key: fs.readFileSync('./ssl/localhost-key.pem'),
+      //   cert: fs.readFileSync('./ssl/localhost.pem'),
+      // },
+      host: '0.0.0.0',
+      allowedHosts: 'all',
       port: 8081, // Use your desired port for the frontend
     },
   };

@@ -8,6 +8,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=development vite",
+    "dev-host": "vite --host 0.0.0.0",
     "build": "cross-env NODE_ENV=production vite build && npx workbox generateSW workbox-config.js",
     "postinstall": "cpy --flat ./node_modules/framework7-icons/fonts/*.* ./src/fonts/ && cpy --flat ./node_modules/material-icons/iconfont/*.* ./src/fonts/"
   },
@@ -25,7 +26,10 @@
     "material-icons": "^1.13.14",
     "skeleton-elements": "^4.0.1",
     "swiper": "^11.2.8",
-    "vue": "^3.5.17"
+    "vue": "^3.5.17",
+    "axios": "^1.7.8",
+    "html5-qrcode": "^2.3.8",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.0",
