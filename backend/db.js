@@ -8,8 +8,8 @@ async function conectaDB() {
   try {
     const client = new MongoClient('mongodb://localhost:27017/');
     await client.connect();
-    db = client.db("Trab2");
-    clientes = db.collection("clientes");
+    db = client.db('feira_de_ciencias');
+    projetos = db.collection('projetos');
     console.log('Conectou no banco de dados');
   } catch (error) {
     console.error('Erro ao conectar no banco de dados:', error.message);

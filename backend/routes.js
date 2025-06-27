@@ -17,31 +17,32 @@ router.post('/register', async (req, res) => {
   }
 });
 
-router.post('/qr-codes', async (req, res) => {
-  const { code, username } = req.body;
-
-  if (!code || !username) {
-      return res.status(400).json({ success: false, message: 'Código e username são obrigatórios' });
-  }
-
+// Buscar todos os projetos da feira
+router.get('/projects', async (req, res) => {
   try {
-      const updatedUser = await db.AdicionaCodigo(username, code);
-      res.status(200).json({ success: true, message: 'QR-Code salvo com sucesso!', user: updatedUser });
+    const projects = await db.buscarProjetos();
+    res.status(200).json({ success: true, projects });
   } catch (error) {
-      console.error('Erro ao salvar QR-Code:', error.message);
-      res.status(500).json({ success: false, message:  error.message });
+    console.error('Erro ao buscar projetos:', error.message);
+    res.status(500).json({ success: false, message: 'Erro ao buscar projetos' });
   }
 });
 
-router.get('/user-qr-codes', async (req, res) => {
-  const userId = req.userId;
+// Votar em um projeto
+router.post('/projects/:projectId/vote', async (req, res) => {
+  const { projectId } = req.params;
+  const { userId } = req.body; // opcional, se quiser controlar voto por usuário
+
+  if (!projectId) {
+    return res.status(400).json({ success: false, message: 'ID do projeto é obrigatório' });
+  }
+
   try {
-    const codes = await db.buscarCodigos(userId);
-    // console.log(codes)
-    res.status(200).json({ success: true, codes });
+    const updatedProject = await db.votarProjeto(projectId, userId);
+    res.status(200).json({ success: true, message: 'Voto registrado!', project: updatedProject });
   } catch (error) {
-    console.error('Erro ao buscar QR-Codes do usuário:', error.message);
-    res.status(500).json({ success: false, message: 'Erro ao buscar QR-Codes' });
+    console.error('Erro ao registrar voto:', error.message);
+    res.status(500).json({ success: false, message: 'Erro ao registrar voto' });
   }
 });
 

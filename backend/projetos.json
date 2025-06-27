@@ -1,0 +1,92 @@
+[
+  {
+    "_id": "proj001",
+    "titulo": "Energia Solar Caseira",
+    "descricao": "Demonstração de como gerar energia elétrica com placas solares feitas de materiais recicláveis.",
+    "videoUrl": "https://youtu.be/energia-solar-caseira",
+    "categoria": "Física / Sustentabilidade",
+    "autor": "Lucas Oliveira",
+    "votos": 0
+  },
+  {
+    "_id": "proj002",
+    "titulo": "Purificador de Água Artesanal",
+    "descricao": "Montagem de um filtro doméstico utilizando areia, carvão e garrafa PET para limpar a água.",
+    "videoUrl": "https://youtu.be/purificador-artesanal",
+    "categoria": "Química / Saúde",
+    "autor": "Ana Paula Silva",
+    "votos": 0
+  },
+  {
+    "_id": "proj003",
+    "titulo": "Robô Seguidor de Linha",
+    "descricao": "Protótipo de robô que segue uma trilha preta usando sensores infravermelho e Arduino.",
+    "videoUrl": "https://youtu.be/robo-linha",
+    "categoria": "Robótica / Tecnologia",
+    "autor": "Carlos Mendes",
+    "votos": 0
+  },
+  {
+    "_id": "proj004",
+    "titulo": "Volcano: Erupção Química",
+    "descricao": "Experimento com bicarbonato e vinagre para simular uma erupção vulcânica.",
+    "videoUrl": "https://youtu.be/vulcao-quimico",
+    "categoria": "Geografia / Química",
+    "autor": "Juliana Rocha",
+    "votos": 0
+  },
+  {
+    "_id": "proj005",
+    "titulo": "Biodigestor Escolar",
+    "descricao": "Mini biodigestor que transforma resíduos orgânicos em gás metano e adubo.",
+    "videoUrl": "https://youtu.be/biodigestor-caseiro",
+    "categoria": "Biologia / Meio Ambiente",
+    "autor": "Pedro Lima",
+    "votos": 0
+  },
+  {
+    "_id": "proj006",
+    "titulo": "O Cérebro em 3D",
+    "descricao": "Modelo em 3D interativo do cérebro humano, mostrando as funções de cada região.",
+    "videoUrl": "https://youtu.be/cebro-modelo",
+    "categoria": "Biologia / Anatomia",
+    "autor": "Isabela Martins",
+    "votos": 0
+  },
+  {
+    "_id": "proj007",
+    "titulo": "Detector de Chuva com Arduino",
+    "descricao": "Sistema que detecta gotas de chuva e aciona alarme e notificações.",
+    "videoUrl": "https://youtu.be/detector-chuva",
+    "categoria": "Tecnologia / Meteorologia",
+    "autor": "Rafael Torres",
+    "votos": 0
+  },
+  {
+    "_id": "proj008",
+    "titulo": "Células Vegetais ao Vivo",
+    "descricao": "Observação de células vegetais ao microscópio e comparação com animais.",
+    "videoUrl": "https://youtu.be/celulas-vegetais",
+    "categoria": "Biologia / Microscopia",
+    "autor": "Letícia Freitas",
+    "votos": 0
+  },
+  {
+    "_id": "proj009",
+    "titulo": "Plástico Biodegradável de Amido",
+    "descricao": "Produção de plástico biodegradável usando amido de milho e glicerina.",
+    "videoUrl": "https://youtu.be/plastico-bio",
+    "categoria": "Química / Sustentabilidade",
+    "autor": "Fernanda Costa",
+    "votos": 0
+  },
+  {
+    "_id": "proj010",
+    "titulo": "Gerador Eólico Miniatura",
+    "descricao": "Protótipo funcional de turbina eólica que gera energia com vento.",
+    "videoUrl": "https://youtu.be/gerador-eolico",
+    "categoria": "Física / Engenharia",
+    "autor": "Vinícius Almeida",
+    "votos": 0
+  }
+]
