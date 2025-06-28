@@ -1,92 +1,314 @@
 [
   {
     "_id": "proj001",
-    "titulo": "Energia Solar Caseira",
-    "descricao": "Demonstração de como gerar energia elétrica com placas solares feitas de materiais recicláveis.",
-    "videoUrl": "https://youtu.be/energia-solar-caseira",
-    "categoria": "Física / Sustentabilidade",
-    "autor": "Lucas Oliveira",
-    "votos": 0
+    "title": "Energia Solar Caseira",
+    "category": "Física / Sustentabilidade",
+    "authors": [
+      "Lucas Oliveira",
+      "Maria Santos",
+      "João Silva"
+    ],
+    "school": "Escola Estadual Dom Pedro II",
+    "description": "Demonstração de como gerar energia elétrica com placas solares feitas de materiais recicláveis. O projeto visa tornar a energia renovável mais acessível para famílias de baixa renda.",
+    "objectives": [
+      "Desenvolver um sistema solar de baixo custo",
+      "Utilizar materiais recicláveis",
+      "Demonstrar a viabilidade da energia renovável",
+      "Educar sobre sustentabilidade"
+    ],
+    "materials": [
+      "Células solares",
+      "Bateria 12V",
+      "Inversor",
+      "Fios",
+      "Madeira reciclada",
+      "Vidro temperado"
+    ],
+    "results": "O sistema desenvolvido consegue gerar até 100W de energia, suficiente para alimentar lâmpadas LED e carregar dispositivos móveis. O custo total foi 70% menor que sistemas comerciais equivalentes.",
+    "videoUrl": "http://www.youtube.com/watch?v=RjwPx7JLm00",
+    "gallery": [
+      "https://www.upsa.com.br/wp-content/uploads/2014/05/aquecedor-solar1-300x225.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcH-kGZdx9STFpAiQ1ekiTMPUaBHPOqsbz2A&s"
+    ],
+    "votes": 45
   },
   {
     "_id": "proj002",
-    "titulo": "Purificador de Água Artesanal",
-    "descricao": "Montagem de um filtro doméstico utilizando areia, carvão e garrafa PET para limpar a água.",
-    "videoUrl": "https://youtu.be/purificador-artesanal",
-    "categoria": "Química / Saúde",
-    "autor": "Ana Paula Silva",
-    "votos": 0
+    "title": "Purificador de Água Artesanal",
+    "category": "Química / Saúde",
+    "authors": [
+      "Ana Paula Silva",
+      "Pedro Costa"
+    ],
+    "school": "Colégio Municipal São José",
+    "description": "Montagem de um filtro doméstico utilizando areia, carvão e garrafa PET para limpar a água. Projeto focado em soluções sustentáveis para comunidades carentes.",
+    "objectives": [
+      "Criar um filtro de água acessível",
+      "Utilizar materiais de baixo custo",
+      "Melhorar a qualidade da água",
+      "Educar sobre tratamento de água"
+    ],
+    "materials": [
+      "Garrafa PET",
+      "Areia fina",
+      "Carvão ativado",
+      "Algodão",
+      "Pedras pequenas",
+      "Tela de nylon"
+    ],
+    "results": "O filtro remove até 85% das impurezas da água, incluindo partículas sólidas e alguns contaminantes químicos. Custo total de apenas R$ 15,00.",
+    "videoUrl": "http://www.youtube.com/watch?v=J1LZoIUBGFI",
+    "gallery": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpNqyXXicLC5L8q5HVi9BSfJwp6ZZ8UA18AQ&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo-Qdu-cb1TlJhAq1UZGl_UC93d5m_V-w3cA&s"
+    ],
+    "votes": 32
   },
   {
     "_id": "proj003",
-    "titulo": "Robô Seguidor de Linha",
-    "descricao": "Protótipo de robô que segue uma trilha preta usando sensores infravermelho e Arduino.",
-    "videoUrl": "https://youtu.be/robo-linha",
-    "categoria": "Robótica / Tecnologia",
-    "autor": "Carlos Mendes",
-    "votos": 0
+    "title": "Robô Seguidor de Linha",
+    "category": "Robótica / Tecnologia",
+    "authors": [
+      "Carlos Mendes",
+      "Fernanda Lima"
+    ],
+    "school": "Instituto Federal de Educação",
+    "description": "Protótipo de robô que segue uma trilha preta usando sensores infravermelho e Arduino. Demonstra conceitos básicos de programação e eletrônica.",
+    "objectives": [
+      "Construir um robô autônomo",
+      "Aplicar conceitos de programação",
+      "Integrar sensores e atuadores",
+      "Desenvolver lógica de controle"
+    ],
+    "materials": [
+      "Arduino Uno",
+      "Sensores infravermelho",
+      "Motores DC",
+      "Chassi de robô",
+      "Bateria 9V",
+      "Jumpers"
+    ],
+    "results": "O robô consegue seguir linhas com precisão de 95% e velocidade de até 0.5 m/s. Projeto serviu como base para competições de robótica.",
+    "videoUrl": "http://www.youtube.com/watch?v=OjdDcRlEti4",
+    "gallery": [
+      "https://i.ytimg.com/vi/OIkVXNqGLTI/maxresdefault.jpg",
+      "https://www.usinainfo.com.br/blog/wp-content/uploads/2016/04/robo-seguidor-de-linha-com-arduino-projeto-maker-1920x1080.jpg"
+    ],
+    "votes": 28
   },
   {
     "_id": "proj004",
-    "titulo": "Volcano: Erupção Química",
-    "descricao": "Experimento com bicarbonato e vinagre para simular uma erupção vulcânica.",
-    "videoUrl": "https://youtu.be/vulcao-quimico",
-    "categoria": "Geografia / Química",
-    "autor": "Juliana Rocha",
-    "votos": 0
+    "title": "Volcano: Erupção Química",
+    "category": "Geografia / Química",
+    "authors": [
+      "Juliana Rocha",
+      "Gabriel Alves"
+    ],
+    "school": "Escola Municipal Santa Clara",
+    "description": "Experimento com bicarbonato e vinagre para simular uma erupção vulcânica. Projeto educativo sobre reações químicas e geologia.",
+    "objectives": [
+      "Demonstrar reações químicas",
+      "Simular fenômenos naturais",
+      "Educar sobre vulcanologia",
+      "Despertar interesse pela ciência"
+    ],
+    "materials": [
+      "Bicarbonato de sódio",
+      "Vinagre",
+      "Corante alimentício",
+      "Argila",
+      "Recipiente plástico",
+      "Colher"
+    ],
+    "results": "A reação produziu uma erupção realista com espuma colorida, demonstrando o gás CO2 liberado. Projeto foi apresentado para 200 alunos.",
+    "videoUrl": "http://www.youtube.com/watch?v=UmsrF9j86aY",
+    "gallery": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS42jV3pHaGQ2b7KdOMhGTxGjQDuqWnUILILg&s",
+      "https://i.pinimg.com/originals/7a/db/7f/7adb7fc34b711f9c002803750127977c.jpg"
+    ],
+    "votes": 67
   },
   {
     "_id": "proj005",
-    "titulo": "Biodigestor Escolar",
-    "descricao": "Mini biodigestor que transforma resíduos orgânicos em gás metano e adubo.",
-    "videoUrl": "https://youtu.be/biodigestor-caseiro",
-    "categoria": "Biologia / Meio Ambiente",
-    "autor": "Pedro Lima",
-    "votos": 0
+    "title": "Biodigestor Escolar",
+    "category": "Biologia / Meio Ambiente",
+    "authors": [
+      "Pedro Lima",
+      "Ana Beatriz"
+    ],
+    "school": "Colégio Estadual Verde",
+    "description": "Mini biodigestor que transforma resíduos orgânicos em gás metano e adubo. Projeto sustentável para gestão de resíduos escolares.",
+    "objectives": [
+      "Processar resíduos orgânicos",
+      "Produzir biogás",
+      "Gerar adubo natural",
+      "Reduzir impacto ambiental"
+    ],
+    "materials": [
+      "Barril plástico",
+      "Tubos PVC",
+      "Resíduos orgânicos",
+      "Bactérias anaeróbicas",
+      "Mangueiras",
+      "Válvulas"
+    ],
+    "results": "O biodigestor processa 5kg de resíduos por dia, produzindo 2L de biogás e 3kg de adubo orgânico. Reduziu 60% do lixo orgânico da escola.",
+    "videoUrl": "http://www.youtube.com/watch?v=7WCQeVH0V3k",
+    "gallery": [
+      "https://www.gov.br/mma/pt-br/mma-lanca-escolas-verdes-para-estimular-acoes-sustentaveis-na-educacao/EscolasVerdeseBiogestores.pdf/@@images/image",
+      "https://www.itaipu.gov.br/sites/default/files/styles/1170x500/public/2023-09/WhatsApp%20Image%202023-09-22%20at%2014.28.27.jpeg?itok=8E2b7H4V",
+      "https://static.wixstatic.com/media/0d75a8_a9e5c70c679a40a8a68b7d90373d5267~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/0d75a8_a9e5c70c679a40a8a68b7d90373d5267~mv2.png"
+    ],
+    "votes": 53
   },
   {
     "_id": "proj006",
-    "titulo": "O Cérebro em 3D",
-    "descricao": "Modelo em 3D interativo do cérebro humano, mostrando as funções de cada região.",
-    "videoUrl": "https://youtu.be/cebro-modelo",
-    "categoria": "Biologia / Anatomia",
-    "autor": "Isabela Martins",
-    "votos": 0
+    "title": "O Cérebro em 3D",
+    "category": "Biologia / Anatomia",
+    "authors": [
+      "Isabela Martins"
+    ],
+    "school": "Escola Técnica Nova Ciência",
+    "description": "Modelo em 3D interativo do cérebro humano, mostrando as funções de cada região.",
+    "objectives": [
+      "Criar uma maquete interativa",
+      "Demonstrar funções cerebrais",
+      "Usar impressão 3D",
+      "Incentivar o estudo da anatomia"
+    ],
+    "materials": [
+      "Impressora 3D",
+      "Filamento PLA",
+      "Pintura acrílica",
+      "Base de madeira"
+    ],
+    "results": "Permite visualização tátil e interativa do cérebro. Usado em aulas de biologia para ensino inclusivo.",
+    "videoUrl": "http://www.youtube.com/watch?v=Ss-y9sg5Alo",
+    "gallery": [
+      "https://loja.medical-x.com/wp-content/uploads/2023/07/3d-model-brain-cerebrum-1-300x300.jpg",
+      "https://http2.mlstatic.com/D_NQ_NP_657984-MLB74075191986_012024-O.webp"
+    ],
+    "votes": 0
   },
   {
     "_id": "proj007",
-    "titulo": "Detector de Chuva com Arduino",
-    "descricao": "Sistema que detecta gotas de chuva e aciona alarme e notificações.",
-    "videoUrl": "https://youtu.be/detector-chuva",
-    "categoria": "Tecnologia / Meteorologia",
-    "autor": "Rafael Torres",
-    "votos": 0
+    "title": "Detector de Chuva com Arduino",
+    "category": "Tecnologia / Meteorologia",
+    "authors": [
+      "Rafael Torres"
+    ],
+    "school": "Escola Técnica Nova Ciência",
+    "description": "Sistema que detecta gotas de chuva e aciona alarme e notificações.",
+    "objectives": [
+      "Detectar chuva automaticamente",
+      "Acionar alarmes",
+      "Enviar alertas via app",
+      "Usar sensores de umidade"
+    ],
+    "materials": [
+      "Arduino",
+      "Sensor de chuva",
+      "Buzzer",
+      "Wi-Fi Module",
+      "Jumpers"
+    ],
+    "results": "Sistema aciona alerta sonoro e envia notificação em tempo real ao celular.",
+    "videoUrl": "http://www.youtube.com/watch?v=Csyt8I9v2Xo",
+    "gallery": [
+      "https://www.robocore.net/loja/image/cache/catalog/produtos/SSR0022-2-1000x1000.jpg",
+      "https://www.blogdarobotica.com/wp-content/uploads/2024/02/Capa-1-1.png"
+    ],
+    "votes": 0
   },
   {
     "_id": "proj008",
-    "titulo": "Células Vegetais ao Vivo",
-    "descricao": "Observação de células vegetais ao microscópio e comparação com animais.",
-    "videoUrl": "https://youtu.be/celulas-vegetais",
-    "categoria": "Biologia / Microscopia",
-    "autor": "Letícia Freitas",
-    "votos": 0
+    "title": "Células Vegetais ao Vivo",
+    "category": "Biologia / Microscopia",
+    "authors": [
+      "Letícia Freitas"
+    ],
+    "school": "Escola Estadual Nova Esperança",
+    "description": "Observação de células vegetais ao microscópio e comparação com animais.",
+    "objectives": [
+      "Observar células ao vivo",
+      "Comparar células vegetais e animais",
+      "Usar microscópio óptico",
+      "Analisar estruturas celulares"
+    ],
+    "materials": [
+      "Microscópio",
+      "Lâminas",
+      "Cebola",
+      "Água",
+      "Corante"
+    ],
+    "results": "Células observadas em diferentes ampliações com núcleo e parede celular visíveis.",
+    "videoUrl": "http://www.youtube.com/watch?v=Q7lZsc3HYwA",
+    "gallery": [
+      "https://bioconectados.com.br/uploads/blog/2024/08/aula-pratica-observacao-de-celulas-da-cebola.jpg",
+      "https://s5.static.brasilescola.uol.com.br/be/conteudo/images/as-celulas-cebola-sao-facilmente-observadas-ao-microscopio-optico-5bd322da938e3.jpg"
+    ],
+    "votes": 0
   },
   {
     "_id": "proj009",
-    "titulo": "Plástico Biodegradável de Amido",
-    "descricao": "Produção de plástico biodegradável usando amido de milho e glicerina.",
-    "videoUrl": "https://youtu.be/plastico-bio",
-    "categoria": "Química / Sustentabilidade",
-    "autor": "Fernanda Costa",
-    "votos": 0
+    "title": "Plástico Biodegradável de Amido",
+    "category": "Química / Sustentabilidade",
+    "authors": [
+      "Fernanda Costa"
+    ],
+    "school": "Escola Técnica Ambiental",
+    "description": "Produção de plástico biodegradável usando amido de milho e glicerina.",
+    "objectives": [
+      "Criar plástico biodegradável",
+      "Testar resistência e tempo de degradação",
+      "Usar materiais naturais",
+      "Reduzir uso de plásticos"
+    ],
+    "materials": [
+      "Amido de milho",
+      "Água",
+      "Glicerina",
+      "Vinagre",
+      "Panela",
+      "Colher"
+    ],
+    "results": "Material biodegradável flexível, com tempo de decomposição de 2 semanas.",
+    "videoUrl": "http://www.youtube.com/watch?v=nRoGask1zUg",
+    "gallery": [
+      "https://www.embalagensflexiveis.com.br/blog/fotos/pl-stico-de-amido-de-milho-uma-alternativa-sustent-vel.jpg",
+      "http://greenlivingbrasil.com/wp-content/uploads/2018/11/corn-starch.jpg"
+    ],
+    "votes": 0
   },
   {
     "_id": "proj010",
-    "titulo": "Gerador Eólico Miniatura",
-    "descricao": "Protótipo funcional de turbina eólica que gera energia com vento.",
-    "videoUrl": "https://youtu.be/gerador-eolico",
-    "categoria": "Física / Engenharia",
-    "autor": "Vinícius Almeida",
-    "votos": 0
+    "title": "Gerador Eólico Miniatura",
+    "category": "Física / Engenharia",
+    "authors": [
+      "Vinícius Almeida"
+    ],
+    "school": "Instituto Federal do Vento",
+    "description": "Protótipo funcional de turbina eólica que gera energia com vento.",
+    "objectives": [
+      "Demonstrar energia eólica",
+      "Construir turbina miniatura",
+      "Gerar eletricidade limpa",
+      "Medir voltagem gerada"
+    ],
+    "materials": [
+      "Gerador DC",
+      "Hélices de PET",
+      "Eixo de metal",
+      "Base de madeira",
+      "Multímetro"
+    ],
+    "results": "Protótipo gera até 3V com vento moderado. Pode acender LED ou carregar bateria pequena.",
+    "videoUrl": "http://www.youtube.com/watch?v=xTjGX-rk_y0",
+    "gallery": [
+      "https://www.autocorerobotica.com.br/img/products/mini-gerador-de-energia-eolica-55v-100ma_1_1200.jpg",
+      "https://energiainteligenteufjf.com.br/wp-content/uploads/2023/11/Mini-Gerador-Eolico-768x432.png"
+    ],
+    "votes": 0
   }
 ]
