@@ -1,5 +1,8 @@
 <template>
   <f7-page name="home" class="home-page">
+    <!-- Loading indicator -->
+    <f7-preloader v-if="loading" :size="44" class="loading-overlay"></f7-preloader>
+    
     <!-- Page content -->
     <div class="page-content">
       <!-- Hero Section -->
@@ -8,89 +11,56 @@
           <div class="hero-icon-container">
             <f7-icon ios="f7:lab_flask" md="material:science" size="80" class="hero-icon"></f7-icon>
             <div class="hero-icon-glow"></div>
+            <div class="hero-icon-particles">
+              <div class="particle"></div>
+              <div class="particle"></div>
+              <div class="particle"></div>
+              <div class="particle"></div>
+            </div>
           </div>
           <h1 class="hero-title">Bem-vindo à Feira de Ciências!</h1>
           <p class="hero-subtitle">Explore projetos incríveis, vote nos seus favoritos e descubra o mundo da ciência.</p>
-          <div class="hero-particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Quick Actions -->
-      <div class="section-title">
-        <h2>Ações Rápidas</h2>
-        <div class="title-underline"></div>
-      </div>
-      <div class="quick-actions">
-        <div class="action-grid">
-          <div class="action-item">
+          <div class="hero-cta">
             <f7-button 
               fill 
               large 
               href="/scanner"
-              class="action-button scanner-button"
+              class="hero-button"
             >
-              <div class="button-content">
-                <f7-icon ios="f7:qrcode_viewfinder" md="material:qr_code_scanner" size="24"></f7-icon>
-                <span>Escanear QR</span>
-              </div>
-            </f7-button>
-          </div>
-          <div class="action-item">
-            <f7-button 
-              fill 
-              large 
-              href="/projects"
-              class="action-button projects-button"
-            >
-              <div class="button-content">
-                <f7-icon ios="f7:list_bullet" md="material:list" size="24"></f7-icon>
-                <span>Ver Projetos</span>
-              </div>
+              <f7-icon ios="f7:qrcode_viewfinder" md="material:qr_code_scanner" slot="start"></f7-icon>
+              Começar Exploração
             </f7-button>
           </div>
         </div>
-        <div class="action-item full-width">
-          <f7-button 
-            fill 
-            large 
-            href="/ranking/"
-            class="action-button ranking-button"
-          >
-            <div class="button-content">
-              <f7-icon ios="f7:trophy" md="material:emoji_events" size="24"></f7-icon>
-              <span>Ranking de Votos</span>
-            </div>
-          </f7-button>
+        <div class="hero-background-elements">
+          <div class="floating-element element-1"></div>
+          <div class="floating-element element-2"></div>
+          <div class="floating-element element-3"></div>
         </div>
       </div>
 
-      <!-- Featured Projects -->
-      <div class="section-title">
-        <h2>Projetos em Destaque</h2>
-        <div class="title-underline"></div>
-      </div>
-      <div class="featured-projects">
-        <div v-for="project in featuredProjects" :key="project.id" class="project-card-modern">
-          <div class="project-image-container">
-            <img :src="project.image" :alt="project.title" class="project-image-modern">
-            <div class="project-overlay">
-              <div class="project-category">{{ project.category }}</div>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">{{ project.title }}</h3>
-            <p class="project-description">{{ project.shortDescription }}</p>
-            <div class="project-footer">
-              <div class="vote-badge">
-                <f7-icon ios="f7:heart_fill" md="material:favorite" size="14" color="white"></f7-icon>
-                <span>{{ project.votes }}</span>
-              </div>
-              <f7-button small outline :href="`/project/${project.id}`" class="details-button">
-                Ver Detalhes
+      <!-- Quick Actions -->
+      <div class="section-container">
+        <div class="section-title">
+          <h2>Ações Rápidas</h2>
+          <div class="title-underline"></div>
+        </div>
+        <div class="quick-actions">
+          <div class="action-grid">
+            <div class="action-item">
+              <f7-button 
+                fill 
+                large 
+                href="/scanner"
+                class="action-button scanner-button"
+              >
+                <div class="button-content">
+                  <f7-icon ios="f7:qrcode_viewfinder" md="material:qr_code_scanner" size="28"></f7-icon>
+                  <div class="button-text">
+                    <span class="button-title">Escanear QR</span>
+                    <span class="button-subtitle">Acesse projetos</span>
+                  </div>
+                </div>
               </f7-button>
             </div>
           </div>
@@ -98,31 +68,84 @@
       </div>
 
       <!-- Statistics -->
-      <div class="section-title">
-        <h2>Estatísticas da Feira</h2>
-        <div class="title-underline"></div>
+      <div class="section-container">
+        <div class="section-title">
+          <h2>Estatísticas da Feira</h2>
+          <div class="title-underline"></div>
+        </div>
+        <div class="stats-container">
+          <div class="stat-card projects-card">
+            <div class="stat-icon projects-stat">
+              <f7-icon ios="f7:folder" md="material:folder" size="32"></f7-icon>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number">{{ stats.totalProjects }}</div>
+              <div class="stat-label">Projetos</div>
+            </div>
+            <div class="stat-decoration"></div>
+          </div>
+          <div class="stat-card votes-card">
+            <div class="stat-icon votes-stat">
+              <f7-icon ios="f7:heart" md="material:favorite" size="32"></f7-icon>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number">{{ stats.totalVotes }}</div>
+              <div class="stat-label">Votos</div>
+            </div>
+            <div class="stat-decoration"></div>
+          </div>
+        </div>
       </div>
-      <div class="stats-container">
-        <div class="stat-card">
-          <div class="stat-icon projects-stat">
-            <f7-icon ios="f7:folder" md="material:folder" size="32"></f7-icon>
-          </div>
-          <div class="stat-number">{{ stats.totalProjects }}</div>
-          <div class="stat-label">Projetos</div>
+
+      <!-- Ranking de Projetos -->
+      <div class="section-container">
+        <div class="section-title">
+          <h2>🏆 Top 3 Projetos</h2>
+          <div class="title-underline"></div>
         </div>
-        <div class="stat-card">
-          <div class="stat-icon votes-stat">
-            <f7-icon ios="f7:heart" md="material:favorite" size="32"></f7-icon>
+        <div class="ranking-container">
+          <div v-for="project in ranking" :key="project._id" class="ranking-item" :class="`position-${project.position}`">
+            <div class="ranking-position">
+              <div class="position-number">{{ project.position }}</div>
+              <div class="position-icon">
+                <f7-icon 
+                  v-if="project.position === 1" 
+                  ios="f7:trophy_fill" 
+                  md="material:emoji_events" 
+                  size="24" 
+                  color="#FFD700"
+                ></f7-icon>
+                <f7-icon 
+                  v-else-if="project.position === 2" 
+                  ios="f7:trophy_fill" 
+                  md="material:emoji_events" 
+                  size="22" 
+                  color="#C0C0C0"
+                ></f7-icon>
+                <f7-icon 
+                  v-else-if="project.position === 3" 
+                  ios="f7:trophy_fill" 
+                  md="material:emoji_events" 
+                  size="20" 
+                  color="#CD7F32"
+                ></f7-icon>
+              </div>
+            </div>
+            <div class="ranking-content">
+              <div class="project-info">
+                <h4 class="project-title">{{ project.title }}</h4>
+                <p class="project-category">{{ project.category }}</p>
+                <p class="project-school">{{ project.school }}</p>
+              </div>
+              <div class="project-votes">
+                <div class="vote-count">
+                  <f7-icon ios="f7:heart_fill" md="material:favorite" size="16" color="#ff6b6b"></f7-icon>
+                  <span>{{ project.votes || 0 }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="ranking-glow"></div>
           </div>
-          <div class="stat-number">{{ stats.totalVotes }}</div>
-          <div class="stat-label">Votos</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon visitors-stat">
-            <f7-icon ios="f7:person_2" md="material:people" size="32"></f7-icon>
-          </div>
-          <div class="stat-number">{{ stats.totalVisitors }}</div>
-          <div class="stat-label">Visitantes</div>
         </div>
       </div>
     </div>
@@ -130,7 +153,7 @@
 </template>
 
 <script>
-import { f7Button, f7Icon, f7Link, f7Navbar, f7NavRight, f7Page } from 'framework7-vue'
+import { f7Button, f7Icon, f7Link, f7Navbar, f7NavRight, f7Page, f7Preloader } from 'framework7-vue'
 
 export default {
   name: 'Home',
@@ -140,49 +163,55 @@ export default {
     f7NavRight,
     f7Link,
     f7Icon,
-    f7Button
+    f7Button,
+    f7Preloader
   },
   data() {
     return {
-      featuredProjects: [
-        {
-          id: 1,
-          title: "Energia Solar Caseira",
-          category: "Física",
-          shortDescription: "Sistema de captação de energia solar para residências.",
-          image: "/placeholder.svg?height=200&width=300",
-          votes: 45
-        },
-        {
-          id: 2,
-          title: "Purificador de Água Natural",
-          category: "Química",
-          shortDescription: "Filtro natural usando materiais sustentáveis.",
-          image: "/placeholder.svg?height=200&width=300",
-          votes: 38
-        },
-        {
-          id: 3,
-          title: "Robô Assistente",
-          category: "Tecnologia",
-          shortDescription: "Robô programado para auxiliar pessoas com deficiência.",
-          image: "/placeholder.svg?height=200&width=300",
-          votes: 52
-        }
-      ],
+      loading: true,  
       stats: {
-        totalProjects: 24,
-        totalVotes: 387,
-        totalVisitors: 156
-      }
+        totalProjects: 0,
+        totalVotes: 0,
+      },
+      ranking: []
     }
   },
   mounted() {
-    this.loadStats()
+    this.loadHomeData()
   },
   methods: {
-    loadStats() {
-      console.log('Carregando estatísticas...')
+    async loadHomeData() {
+      this.loading = true
+      
+      try {
+        const response = await fetch('/api/home')
+        if (!response.ok) {
+          throw new Error('Erro ao carregar dados da home')
+        }
+        
+        const data = await response.json()
+        
+        if (data.success) {
+          this.stats = data.stats
+          this.ranking = data.ranking
+        } else {
+          throw new Error(data.message || 'Erro ao carregar dados da home')
+        }
+        
+      } catch (error) {
+        this.stats = {
+          totalProjects: 0,
+          totalVotes: 0,
+        }
+        this.ranking = []
+      } finally {
+        this.loading = false
+      }
+    },
+    
+    getShortDescription(description) {
+      if (!description) return 'Descrição não disponível'
+      return description.length > 80 ? description.substring(0, 80) + '...' : description
     }
   }
 }
@@ -192,45 +221,40 @@ export default {
 .home-page {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
 
-.navbar-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  backdrop-filter: blur(10px);
-}
-
-.settings-link {
-  color: white !important;
-  opacity: 0.9;
-  transition: opacity 0.3s ease;
-}
-
-.settings-link:hover {
-  opacity: 1;
+.loading-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
 }
 
 .hero-section {
   position: relative;
-  padding: 40px 20px 60px;
+  padding: 60px 20px 80px;
   text-align: center;
   overflow: hidden;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .hero-icon-container {
   position: relative;
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .hero-icon {
   color: white;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3));
+  animation: hero-float 4s ease-in-out infinite;
 }
 
 .hero-icon-glow {
@@ -238,311 +262,524 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%);
   border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
+  animation: hero-pulse 3s ease-in-out infinite;
+}
+
+.hero-icon-particles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+}
+
+.hero-icon-particles .particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 50%;
+  animation: particle-orbit 8s linear infinite;
+}
+
+.hero-icon-particles .particle:nth-child(1) {
+  animation-delay: 0s;
+  top: 0;
+  left: 50%;
+}
+
+.hero-icon-particles .particle:nth-child(2) {
+  animation-delay: 2s;
+  top: 50%;
+  right: 0;
+}
+
+.hero-icon-particles .particle:nth-child(3) {
+  animation-delay: 4s;
+  bottom: 0;
+  left: 50%;
+}
+
+.hero-icon-particles .particle:nth-child(4) {
+  animation-delay: 6s;
+  top: 50%;
+  left: 0;
 }
 
 .hero-title {
   color: white;
-  font-size: 28px;
-  font-weight: 700;
-  margin: 0 0 15px 0;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 20px 0;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
 }
 
 .hero-subtitle {
-  color: rgba(255,255,255,0.9);
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 0;
-  max-width: 300px;
-  margin: 0 auto;
+  color: rgba(255,255,255,0.95);
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 35px 0;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
 }
 
-.hero-particles {
+.hero-cta {
+  margin-top: 20px;
+}
+
+.hero-button {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  border-radius: 25px;
+  height: 60px;
+  padding: 0 35px;
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 
+    0 10px 30px rgba(79, 172, 254, 0.4),
+    0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s;
+}
+
+.hero-button:active {
+  transform: translateY(3px);
+  box-shadow: 
+    0 5px 20px rgba(79, 172, 254, 0.5),
+    0 2px 8px rgba(0,0,0,0.2);
+}
+
+.hero-button:active::before {
+  left: 100%;
+}
+
+.hero-background-elements {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: 1;
 }
 
-.particle {
+.floating-element {
   position: absolute;
-  width: 4px;
-  height: 4px;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.1);
   border-radius: 50%;
-  animation: particle-float 6s ease-in-out infinite;
+  animation: float-random 6s ease-in-out infinite;
 }
 
-.particle:nth-child(1) {
+.element-1 {
+  width: 80px;
+  height: 80px;
   top: 20%;
-  left: 20%;
+  left: 10%;
   animation-delay: 0s;
 }
 
-.particle:nth-child(2) {
+.element-2 {
+  width: 60px;
+  height: 60px;
   top: 60%;
-  right: 20%;
+  right: 15%;
   animation-delay: 2s;
 }
 
-.particle:nth-child(3) {
+.element-3 {
+  width: 100px;
+  height: 100px;
   bottom: 20%;
-  left: 50%;
+  left: 20%;
   animation-delay: 4s;
+}
+
+.section-container {
+  margin-bottom: 50px;
 }
 
 .section-title {
   text-align: center;
-  margin: 40px 0 30px;
+  margin: 0 0 35px;
+  padding: 0 20px;
 }
 
 .section-title h2 {
   color: white;
-  font-size: 24px;
-  font-weight: 600;
-  margin: 0 0 10px 0;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  letter-spacing: -0.3px;
 }
 
 .title-underline {
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #ff6b6b, #feca57);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb);
   margin: 0 auto;
   border-radius: 2px;
+  animation: underline-glow 3s ease-in-out infinite;
 }
 
 .quick-actions {
   padding: 0 20px;
-  margin-bottom: 20px;
 }
 
 .action-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-bottom: 15px;
-}
-
-.action-item {
-  position: relative;
-}
-
-.action-item.full-width {
-  grid-column: 1 / -1;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
 .action-button {
   width: 100%;
-  height: 60px;
-  border-radius: 16px;
+  height: 80px;
+  border-radius: 20px;
   border: none;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .scanner-button {
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
 }
 
-.projects-button {
-  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-}
-
-.ranking-button {
-  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-}
-
-.action-button:active {
-  transform: translateY(2px);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-}
-
 .button-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
   color: white;
-  font-weight: 600;
+  height: 100%;
 }
 
-.featured-projects {
+.button-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.button-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.button-subtitle {
+  font-size: 14px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.action-button:active {
+  transform: translateY(3px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.stat-card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card:active {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+}
+
+.stat-decoration {
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1));
+  border-radius: 50%;
+  animation: decoration-rotate 8s linear infinite;
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.projects-stat {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.votes-stat {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.stat-content {
+  position: relative;
+  z-index: 2;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 800;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #7f8c8d;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ranking-container {
   padding: 0 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.project-card-modern {
+.ranking-item {
   background: rgba(255,255,255,0.95);
   border-radius: 20px;
-  overflow: hidden;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.project-card-modern:active {
-  transform: translateY(-5px);
+.ranking-item:active {
+  transform: translateY(-3px);
   box-shadow: 0 12px 40px rgba(0,0,0,0.15);
 }
 
-.project-image-container {
-  position: relative;
-  height: 180px;
-  overflow: hidden;
+.ranking-item.position-1 {
+  border: 3px solid #FFD700;
+  background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,255,255,0.95));
 }
 
-.project-image-modern {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+.ranking-item.position-2 {
+  border: 3px solid #C0C0C0;
+  background: linear-gradient(135deg, rgba(192,192,192,0.15), rgba(255,255,255,0.95));
 }
 
-.project-card-modern:hover .project-image-modern {
-  transform: scale(1.05);
+.ranking-item.position-3 {
+  border: 3px solid #CD7F32;
+  background: linear-gradient(135deg, rgba(205,127,50,0.15), rgba(255,255,255,0.95));
 }
 
-.project-overlay {
+.ranking-glow {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.project-category {
-  background: rgba(0,0,0,0.7);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 500;
+.ranking-item:hover .ranking-glow {
+  opacity: 1;
 }
 
-.project-content {
-  padding: 20px;
+.ranking-position {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 60px;
 }
 
-.project-title {
-  font-size: 18px;
-  font-weight: 700;
+.position-number {
+  font-size: 28px;
+  font-weight: 800;
   color: #2c3e50;
-  margin: 0 0 8px 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.project-description {
-  color: #7f8c8d;
-  font-size: 14px;
-  line-height: 1.4;
-  margin: 0 0 15px 0;
+.position-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: trophy-shine 3s ease-in-out infinite;
 }
 
-.project-footer {
+.ranking-content {
+  flex: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.vote-badge {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-  color: white;
-  padding: 8px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 600;
+.project-info {
+  flex: 1;
 }
 
-.details-button {
-  border-color: #667eea;
-  color: #667eea;
-  border-radius: 20px;
-  font-weight: 600;
-}
-
-.stats-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  padding: 0 20px 40px;
-}
-
-.stat-card {
-  background: rgba(255,255,255,0.95);
-  border-radius: 16px;
-  padding: 20px 15px;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease;
-}
-
-.stat-card:active {
-  transform: translateY(-3px);
-}
-
-.stat-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 15px;
-}
-
-.projects-stat {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-}
-
-.votes-stat {
-  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-  color: white;
-}
-
-.visitors-stat {
-  background: linear-gradient(135deg, #feca57, #ff9ff3);
-  color: white;
-}
-
-.stat-number {
-  font-size: 24px;
+.project-info .project-title {
+  font-size: 18px;
   font-weight: 700;
   color: #2c3e50;
-  margin-bottom: 5px;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
 }
 
-.stat-label {
+.project-info .project-category {
+  font-size: 14px;
+  color: #667eea;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+}
+
+.project-info .project-school {
   font-size: 12px;
   color: #7f8c8d;
+  margin: 0;
   font-weight: 500;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+.project-votes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+.vote-count {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  animation: vote-pulse 2s ease-in-out infinite;
 }
 
-@keyframes particle-float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
-  50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(3deg); }
+}
+
+@keyframes hero-pulse {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+@keyframes particle-orbit {
+  0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+@keyframes float-random {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-20px) translateX(10px); }
+  66% { transform: translateY(10px) translateX(-15px); }
+}
+
+@keyframes underline-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(255, 107, 107, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(255, 107, 107, 0.8); }
+}
+
+@keyframes decoration-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes trophy-shine {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.3) drop-shadow(0 0 10px currentColor); }
+}
+
+@keyframes vote-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 28px;
+  }
+  
+  .hero-subtitle {
+    font-size: 16px;
+  }
+  
+  .section-title h2 {
+    font-size: 22px;
+  }
+  
+  .stat-number {
+    font-size: 28px;
+  }
+  
+  .ranking-item {
+    padding: 20px;
+    gap: 15px;
+  }
+  
+  .project-info .project-title {
+    font-size: 16px;
+  }
 }
 </style>
