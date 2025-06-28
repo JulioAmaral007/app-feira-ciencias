@@ -20,17 +20,6 @@
           </div>
           <h1 class="hero-title">Bem-vindo à Feira de Ciências!</h1>
           <p class="hero-subtitle">Explore projetos incríveis, vote nos seus favoritos e descubra o mundo da ciência.</p>
-          <div class="hero-cta">
-            <f7-button 
-              fill 
-              large 
-              href="/scanner"
-              class="hero-button"
-            >
-              <f7-icon ios="f7:qrcode_viewfinder" md="material:qr_code_scanner" slot="start"></f7-icon>
-              Começar Exploração
-            </f7-button>
-          </div>
         </div>
         <div class="hero-background-elements">
           <div class="floating-element element-1"></div>
