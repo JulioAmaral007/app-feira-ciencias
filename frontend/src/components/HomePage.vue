@@ -153,16 +153,16 @@ export default {
     f7Link,
     f7Icon,
     f7Button,
-    f7Preloader
+    f7Preloader,
   },
   data() {
     return {
-      loading: true,  
+      loading: true,
       stats: {
         totalProjects: 0,
         totalVotes: 0,
       },
-      ranking: []
+      ranking: [],
     }
   },
   mounted() {
@@ -171,22 +171,21 @@ export default {
   methods: {
     async loadHomeData() {
       this.loading = true
-      
+
       try {
         const response = await fetch('/api/home')
         if (!response.ok) {
           throw new Error('Erro ao carregar dados da home')
         }
-        
+
         const data = await response.json()
-        
+
         if (data.success) {
           this.stats = data.stats
           this.ranking = data.ranking
         } else {
           throw new Error(data.message || 'Erro ao carregar dados da home')
         }
-        
       } catch (error) {
         this.stats = {
           totalProjects: 0,
@@ -197,12 +196,12 @@ export default {
         this.loading = false
       }
     },
-    
+
     getShortDescription(description) {
       if (!description) return 'Descrição não disponível'
       return description.length > 80 ? description.substring(0, 80) + '...' : description
-    }
-  }
+    },
+  },
 }
 </script>
 

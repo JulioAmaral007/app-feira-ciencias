@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const ProjectSchema = new mongoose.Schema(
   {
@@ -49,11 +49,11 @@ const ProjectSchema = new mongoose.Schema(
     votes: {
       type: Number,
       default: 0,
-    }
+    },
   },
   {
     timestamps: true,
   }
-);
+)
 
-module.exports = mongoose.model('Project', ProjectSchema, 'projetos');
+module.exports = mongoose.model('Project', ProjectSchema, 'projetos')

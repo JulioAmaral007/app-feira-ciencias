@@ -209,14 +209,14 @@ export default {
     f7Icon,
     f7Button,
     f7Input,
-    f7Preloader
+    f7Preloader,
   },
   data() {
     return {
       loading: true,
       error: null,
       hasVoted: false,
-      project: null
+      project: null,
     }
   },
   mounted() {
@@ -226,32 +226,31 @@ export default {
     async loadProject() {
       this.loading = true
       this.error = null
-      
+
       try {
         const projectId = this.$route.params.id
-        
+
         if (!projectId) {
           throw new Error('ID do projeto não encontrado')
         }
-        
+
         const response = await fetch(`/api/project/${projectId}`)
-        
+
         if (!response.ok) {
           if (response.status === 404) {
             throw new Error('Projeto não encontrado')
           }
           throw new Error('Erro ao carregar projeto')
         }
-        
+
         const data = await response.json()
-        
+
         if (data.success) {
           this.project = data.project
           this.checkVoteStatus()
         } else {
           throw new Error(data.message || 'Erro ao carregar projeto')
         }
-        
       } catch (error) {
         console.error('Erro ao carregar projeto:', error)
         this.error = error.message
@@ -259,13 +258,13 @@ export default {
         this.loading = false
       }
     },
-    
+
     checkVoteStatus() {
       if (!this.project) return
       const voted = localStorage.getItem(`voted_${this.project._id}`)
       this.hasVoted = !!voted
     },
-    
+
     async voteProject() {
       if (!this.project) return
 
@@ -273,18 +272,17 @@ export default {
         const response = await fetch(`/api/project/${this.project._id}/vote`, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json'
-          }
+            'Content-Type': 'application/json',
+          },
         })
-        
+
         if (response.ok) {
           const data = await response.json()
-          
+
           if (data.success) {
             this.project = data.project
             this.hasVoted = true
             localStorage.setItem(`voted_${this.project._id}`, 'true')
-            
           } else {
             throw new Error(data.message || 'Erro ao registrar voto')
           }
@@ -293,25 +291,26 @@ export default {
         }
       } catch (error) {
         console.error('Erro ao votar:', error)
-
       }
     },
-    
+
     playVideo() {
       if (!this.project || !this.project.videoUrl) return
-      
+
       window.open(this.project.videoUrl, '_blank')
     },
-    
+
     openPhotoGallery(index) {
       if (!this.project || !this.project.gallery) return
-      
-      f7.photoBrowser.create({
-        photos: this.project.gallery,
-        theme: 'dark',
-      }).open(index)
+
+      f7.photoBrowser
+        .create({
+          photos: this.project.gallery,
+          theme: 'dark',
+        })
+        .open(index)
     },
-  }
+  },
 }
 </script>
 

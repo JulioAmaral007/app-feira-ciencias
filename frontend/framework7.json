@@ -1,8 +1,6 @@
 {
   "cwd": "C:\\Users\\jczrp\\Documentos\\Softwares\\Projects-Facu\\ProgramacaoWeb\\app-feira-ciencias",
-  "type": [
-    "pwa"
-  ],
+  "type": ["pwa"],
   "name": "Scan App",
   "framework": "vue",
   "template": "single-view",

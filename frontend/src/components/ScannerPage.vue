@@ -72,8 +72,8 @@
 </template>
 
 <script>
-import { f7, f7Button, f7Icon, f7Input, f7Navbar, f7Page } from 'framework7-vue';
-import { Html5Qrcode } from "html5-qrcode";
+import { f7, f7Button, f7Icon, f7Input, f7Navbar, f7Page } from 'framework7-vue'
+import { Html5Qrcode } from 'html5-qrcode'
 
 export default {
   name: 'Scanner',
@@ -82,7 +82,7 @@ export default {
     f7Navbar,
     f7Icon,
     f7Button,
-    f7Input
+    f7Input,
   },
   data() {
     return {
@@ -92,60 +92,60 @@ export default {
   },
   methods: {
     startCamera() {
-  this.cameraActive = true;
-  const config = { fps: 10, qrbox: { width: 250, height: 250 } };
-  this.html5QrCode = new Html5Qrcode("qr-reader");
+      this.cameraActive = true
+      const config = { fps: 10, qrbox: { width: 250, height: 250 } }
+      this.html5QrCode = new Html5Qrcode('qr-reader')
 
-  Html5Qrcode.getCameras().then(devices => {
-    if (devices && devices.length) {
-      // Tenta achar a câmera traseira
-      const backCamera = devices.find(device =>
-        device.label.toLowerCase().includes('back') ||
-        device.label.toLowerCase().includes('rear')
-      );
+      Html5Qrcode.getCameras()
+        .then(devices => {
+          if (devices && devices.length) {
+            // Tenta achar a câmera traseira
+            const backCamera = devices.find(
+              device => device.label.toLowerCase().includes('back') || device.label.toLowerCase().includes('rear')
+            )
 
-      // Usa a traseira se encontrar, senão pega a primeira
-      const cameraId = backCamera ? backCamera.id : devices[0].id;
+            // Usa a traseira se encontrar, senão pega a primeira
+            const cameraId = backCamera ? backCamera.id : devices[0].id
 
-      this.html5QrCode.start(
-        cameraId,
-        config,
-        (decodedText, decodedResult) => {
-          this.onScanSuccess(decodedText);
-        },
-        errorMessage => {
-          // leitura com erro, pode ignorar ou exibir no console
-          console.warn("Erro de leitura QR:", errorMessage);
-        }
-      );
-    }
-  }).catch(err => {
-    f7.dialog.alert("Erro ao acessar a câmera: " + err);
-  });
-},
-
+            this.html5QrCode.start(
+              cameraId,
+              config,
+              (decodedText, decodedResult) => {
+                this.onScanSuccess(decodedText)
+              },
+              errorMessage => {
+                // leitura com erro, pode ignorar ou exibir no console
+                console.warn('Erro de leitura QR:', errorMessage)
+              }
+            )
+          }
+        })
+        .catch(err => {
+          f7.dialog.alert('Erro ao acessar a câmera: ' + err)
+        })
+    },
 
     stopCamera() {
       if (this.html5QrCode) {
         this.html5QrCode.stop().then(() => {
-          this.html5QrCode.clear();
-          this.html5QrCode = null;
-        });
+          this.html5QrCode.clear()
+          this.html5QrCode = null
+        })
       }
-      this.cameraActive = false;
+      this.cameraActive = false
     },
 
     onScanSuccess(decodedText) {
-      this.stopCamera();
+      this.stopCamera()
       setTimeout(() => {
-        this.$router.push("/project/" + decodedText);
-      }, 1500);
+        this.$router.push('/project/' + decodedText)
+      }, 1500)
     },
   },
 
   mounted() {
-    this.startCamera();
-  }
+    this.startCamera()
+  },
 }
 </script>
 

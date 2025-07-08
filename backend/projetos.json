@@ -3,11 +3,7 @@
     "_id": "proj001",
     "title": "Energia Solar Caseira",
     "category": "Física / Sustentabilidade",
-    "authors": [
-      "Lucas Oliveira",
-      "Maria Santos",
-      "João Silva"
-    ],
+    "authors": ["Lucas Oliveira", "Maria Santos", "João Silva"],
     "school": "Escola Estadual Dom Pedro II",
     "description": "Demonstração de como gerar energia elétrica com placas solares feitas de materiais recicláveis. O projeto visa tornar a energia renovável mais acessível para famílias de baixa renda.",
     "objectives": [
@@ -16,14 +12,7 @@
       "Demonstrar a viabilidade da energia renovável",
       "Educar sobre sustentabilidade"
     ],
-    "materials": [
-      "Células solares",
-      "Bateria 12V",
-      "Inversor",
-      "Fios",
-      "Madeira reciclada",
-      "Vidro temperado"
-    ],
+    "materials": ["Células solares", "Bateria 12V", "Inversor", "Fios", "Madeira reciclada", "Vidro temperado"],
     "results": "O sistema desenvolvido consegue gerar até 100W de energia, suficiente para alimentar lâmpadas LED e carregar dispositivos móveis. O custo total foi 70% menor que sistemas comerciais equivalentes.",
     "videoUrl": "http://www.youtube.com/watch?v=RjwPx7JLm00",
     "gallery": [
@@ -36,10 +25,7 @@
     "_id": "proj002",
     "title": "Purificador de Água Artesanal",
     "category": "Química / Saúde",
-    "authors": [
-      "Ana Paula Silva",
-      "Pedro Costa"
-    ],
+    "authors": ["Ana Paula Silva", "Pedro Costa"],
     "school": "Colégio Municipal São José",
     "description": "Montagem de um filtro doméstico utilizando areia, carvão e garrafa PET para limpar a água. Projeto focado em soluções sustentáveis para comunidades carentes.",
     "objectives": [
@@ -48,14 +34,7 @@
       "Melhorar a qualidade da água",
       "Educar sobre tratamento de água"
     ],
-    "materials": [
-      "Garrafa PET",
-      "Areia fina",
-      "Carvão ativado",
-      "Algodão",
-      "Pedras pequenas",
-      "Tela de nylon"
-    ],
+    "materials": ["Garrafa PET", "Areia fina", "Carvão ativado", "Algodão", "Pedras pequenas", "Tela de nylon"],
     "results": "O filtro remove até 85% das impurezas da água, incluindo partículas sólidas e alguns contaminantes químicos. Custo total de apenas R$ 15,00.",
     "videoUrl": "http://www.youtube.com/watch?v=J1LZoIUBGFI",
     "gallery": [
@@ -68,10 +47,7 @@
     "_id": "proj003",
     "title": "Robô Seguidor de Linha",
     "category": "Robótica / Tecnologia",
-    "authors": [
-      "Carlos Mendes",
-      "Fernanda Lima"
-    ],
+    "authors": ["Carlos Mendes", "Fernanda Lima"],
     "school": "Instituto Federal de Educação",
     "description": "Protótipo de robô que segue uma trilha preta usando sensores infravermelho e Arduino. Demonstra conceitos básicos de programação e eletrônica.",
     "objectives": [
@@ -80,14 +56,7 @@
       "Integrar sensores e atuadores",
       "Desenvolver lógica de controle"
     ],
-    "materials": [
-      "Arduino Uno",
-      "Sensores infravermelho",
-      "Motores DC",
-      "Chassi de robô",
-      "Bateria 9V",
-      "Jumpers"
-    ],
+    "materials": ["Arduino Uno", "Sensores infravermelho", "Motores DC", "Chassi de robô", "Bateria 9V", "Jumpers"],
     "results": "O robô consegue seguir linhas com precisão de 95% e velocidade de até 0.5 m/s. Projeto serviu como base para competições de robótica.",
     "videoUrl": "http://www.youtube.com/watch?v=OjdDcRlEti4",
     "gallery": [
@@ -100,10 +69,7 @@
     "_id": "proj004",
     "title": "Volcano: Erupção Química",
     "category": "Geografia / Química",
-    "authors": [
-      "Juliana Rocha",
-      "Gabriel Alves"
-    ],
+    "authors": ["Juliana Rocha", "Gabriel Alves"],
     "school": "Escola Municipal Santa Clara",
     "description": "Experimento com bicarbonato e vinagre para simular uma erupção vulcânica. Projeto educativo sobre reações químicas e geologia.",
     "objectives": [
@@ -112,14 +78,7 @@
       "Educar sobre vulcanologia",
       "Despertar interesse pela ciência"
     ],
-    "materials": [
-      "Bicarbonato de sódio",
-      "Vinagre",
-      "Corante alimentício",
-      "Argila",
-      "Recipiente plástico",
-      "Colher"
-    ],
+    "materials": ["Bicarbonato de sódio", "Vinagre", "Corante alimentício", "Argila", "Recipiente plástico", "Colher"],
     "results": "A reação produziu uma erupção realista com espuma colorida, demonstrando o gás CO2 liberado. Projeto foi apresentado para 200 alunos.",
     "videoUrl": "http://www.youtube.com/watch?v=UmsrF9j86aY",
     "gallery": [
@@ -132,10 +91,7 @@
     "_id": "proj005",
     "title": "Biodigestor Escolar",
     "category": "Biologia / Meio Ambiente",
-    "authors": [
-      "Pedro Lima",
-      "Ana Beatriz"
-    ],
+    "authors": ["Pedro Lima", "Ana Beatriz"],
     "school": "Colégio Estadual Verde",
     "description": "Mini biodigestor que transforma resíduos orgânicos em gás metano e adubo. Projeto sustentável para gestão de resíduos escolares.",
     "objectives": [
@@ -165,9 +121,7 @@
     "_id": "proj006",
     "title": "O Cérebro em 3D",
     "category": "Biologia / Anatomia",
-    "authors": [
-      "Isabela Martins"
-    ],
+    "authors": ["Isabela Martins"],
     "school": "Escola Técnica Nova Ciência",
     "description": "Modelo em 3D interativo do cérebro humano, mostrando as funções de cada região.",
     "objectives": [
@@ -176,12 +130,7 @@
       "Usar impressão 3D",
       "Incentivar o estudo da anatomia"
     ],
-    "materials": [
-      "Impressora 3D",
-      "Filamento PLA",
-      "Pintura acrílica",
-      "Base de madeira"
-    ],
+    "materials": ["Impressora 3D", "Filamento PLA", "Pintura acrílica", "Base de madeira"],
     "results": "Permite visualização tátil e interativa do cérebro. Usado em aulas de biologia para ensino inclusivo.",
     "videoUrl": "http://www.youtube.com/watch?v=Ss-y9sg5Alo",
     "gallery": [
@@ -194,9 +143,7 @@
     "_id": "proj007",
     "title": "Detector de Chuva com Arduino",
     "category": "Tecnologia / Meteorologia",
-    "authors": [
-      "Rafael Torres"
-    ],
+    "authors": ["Rafael Torres"],
     "school": "Escola Técnica Nova Ciência",
     "description": "Sistema que detecta gotas de chuva e aciona alarme e notificações.",
     "objectives": [
@@ -205,13 +152,7 @@
       "Enviar alertas via app",
       "Usar sensores de umidade"
     ],
-    "materials": [
-      "Arduino",
-      "Sensor de chuva",
-      "Buzzer",
-      "Wi-Fi Module",
-      "Jumpers"
-    ],
+    "materials": ["Arduino", "Sensor de chuva", "Buzzer", "Wi-Fi Module", "Jumpers"],
     "results": "Sistema aciona alerta sonoro e envia notificação em tempo real ao celular.",
     "videoUrl": "http://www.youtube.com/watch?v=Csyt8I9v2Xo",
     "gallery": [
@@ -224,9 +165,7 @@
     "_id": "proj008",
     "title": "Células Vegetais ao Vivo",
     "category": "Biologia / Microscopia",
-    "authors": [
-      "Letícia Freitas"
-    ],
+    "authors": ["Letícia Freitas"],
     "school": "Escola Estadual Nova Esperança",
     "description": "Observação de células vegetais ao microscópio e comparação com animais.",
     "objectives": [
@@ -235,13 +174,7 @@
       "Usar microscópio óptico",
       "Analisar estruturas celulares"
     ],
-    "materials": [
-      "Microscópio",
-      "Lâminas",
-      "Cebola",
-      "Água",
-      "Corante"
-    ],
+    "materials": ["Microscópio", "Lâminas", "Cebola", "Água", "Corante"],
     "results": "Células observadas em diferentes ampliações com núcleo e parede celular visíveis.",
     "videoUrl": "http://www.youtube.com/watch?v=Q7lZsc3HYwA",
     "gallery": [
@@ -254,9 +187,7 @@
     "_id": "proj009",
     "title": "Plástico Biodegradável de Amido",
     "category": "Química / Sustentabilidade",
-    "authors": [
-      "Fernanda Costa"
-    ],
+    "authors": ["Fernanda Costa"],
     "school": "Escola Técnica Ambiental",
     "description": "Produção de plástico biodegradável usando amido de milho e glicerina.",
     "objectives": [
@@ -265,14 +196,7 @@
       "Usar materiais naturais",
       "Reduzir uso de plásticos"
     ],
-    "materials": [
-      "Amido de milho",
-      "Água",
-      "Glicerina",
-      "Vinagre",
-      "Panela",
-      "Colher"
-    ],
+    "materials": ["Amido de milho", "Água", "Glicerina", "Vinagre", "Panela", "Colher"],
     "results": "Material biodegradável flexível, com tempo de decomposição de 2 semanas.",
     "videoUrl": "http://www.youtube.com/watch?v=nRoGask1zUg",
     "gallery": [
@@ -285,9 +209,7 @@
     "_id": "proj010",
     "title": "Gerador Eólico Miniatura",
     "category": "Física / Engenharia",
-    "authors": [
-      "Vinícius Almeida"
-    ],
+    "authors": ["Vinícius Almeida"],
     "school": "Instituto Federal do Vento",
     "description": "Protótipo funcional de turbina eólica que gera energia com vento.",
     "objectives": [
@@ -296,13 +218,7 @@
       "Gerar eletricidade limpa",
       "Medir voltagem gerada"
     ],
-    "materials": [
-      "Gerador DC",
-      "Hélices de PET",
-      "Eixo de metal",
-      "Base de madeira",
-      "Multímetro"
-    ],
+    "materials": ["Gerador DC", "Hélices de PET", "Eixo de metal", "Base de madeira", "Multímetro"],
     "results": "Protótipo gera até 3V com vento moderado. Pode acender LED ou carregar bateria pequena.",
     "videoUrl": "http://www.youtube.com/watch?v=xTjGX-rk_y0",
     "gallery": [
